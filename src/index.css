@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.btn {
+  @apply border-2 border-white text-darkBlue rounded-full;
+}
+
+.btn-primary {
+  @apply bg-white;
+}
+
+.btn-primary:hover {
+  @apply border-white bg-darkBlue text-white;
+}
