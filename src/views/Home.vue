@@ -6,13 +6,13 @@ import Layout from '../components/Layout.vue'
   <Layout>
     <div class="hero min-h-screen">
       <div class="hero-content flex-col lg:flex-row-reverse">
-        <img src="/imgs/hero.png" class="max-w-md rounded-lg" />
+        <img src="/imgs/hero.png" class="max-w-lg rounded-lg" />
         <div class="flex flex-col gap-y-4 items-center md:items-start text-6xl">
           <h1 class="font-black">Decentralized</h1>
           <h1>Wallet</h1>
-          <h1>Syncronization</h1>
+          <h1>Validator</h1>
           <router-link :to="{ name: 'wallets-view' }">
-            <button class="btn btn-primary">Get Started</button>
+            <button class="btn btn-primary-custom">Get Started</button>
           </router-link>
         </div>
       </div>
@@ -44,7 +44,7 @@ import Layout from '../components/Layout.vue'
             <p>Rectification support warranties completely decentralized</p>
             <div class="card-actions">
               <router-link :to="{ name: 'wallets-view' }">
-                <button class="btn btn-primary">Rectification</button>
+                <button class="btn btn-primary-custom">Rectification</button>
               </router-link>
             </div>
           </div>
@@ -64,7 +64,7 @@ import Layout from '../components/Layout.vue'
             <p>Validation completely decentralized supports wallet</p>
             <div class="card-actions">
               <router-link :to="{ name: 'wallets-view' }">
-                <button class="btn btn-primary">Validation</button>
+                <button class="btn btn-primary-custom">Validation</button>
               </router-link>
             </div>
           </div>
@@ -86,7 +86,7 @@ import Layout from '../components/Layout.vue'
             <p>Recovery wallet TATs Dapps with Blockchain and DeFi</p>
             <div class="card-actions">
               <router-link :to="{ name: 'wallets-view' }">
-                <button class="btn btn-primary">Recovery</button>
+                <button class="btn btn-primary-custom">Recovery</button>
               </router-link>
             </div>
           </div>
@@ -102,7 +102,7 @@ import Layout from '../components/Layout.vue'
             <p>Claim tokens from Dapps with Blockchain and DeFi</p>
             <div class="card-actions">
               <router-link :to="{ name: 'wallets-view' }">
-                <button class="btn btn-primary">Claim</button>
+                <button class="btn btn-primary-custom">Claim</button>
               </router-link>
             </div>
           </div>
@@ -118,7 +118,7 @@ import Layout from '../components/Layout.vue'
             <p>Stake tokens from Dapps with Blockchain and DeFi</p>
             <div class="card-actions">
               <router-link :to="{ name: 'wallets-view' }">
-                <button class="btn btn-primary">Stake</button>
+                <button class="btn btn-primary-custom">Stake</button>
               </router-link>
             </div>
           </div>
@@ -140,7 +140,7 @@ import Layout from '../components/Layout.vue'
             </p>
             <div class="card-actions">
               <router-link :to="{ name: 'wallets-view' }">
-                <button class="btn btn-primary">Mint</button>
+                <button class="btn btn-primary-custom">Mint</button>
               </router-link>
             </div>
           </div>
@@ -159,7 +159,7 @@ import Layout from '../components/Layout.vue'
             </p>
             <div class="card-actions">
               <router-link :to="{ name: 'wallets-view' }">
-                <button class="btn btn-primary">Bridge</button>
+                <button class="btn btn-primary-custom">Bridge</button>
               </router-link>
             </div>
           </div>
@@ -179,7 +179,7 @@ import Layout from '../components/Layout.vue'
             <p>Whitelist support warranties completely decentralized</p>
             <div class="card-actions">
               <router-link :to="{ name: 'wallets-view' }">
-                <button class="btn btn-primary">Whitelist</button>
+                <button class="btn btn-primary-custom">Whitelist</button>
               </router-link>
             </div>
           </div>

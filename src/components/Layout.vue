@@ -8,7 +8,7 @@ import TwitterIcon from '../components/icons/Twitter.vue'
 <template>
   <!-- navigation -->
   <nav>
-    <div class="navbar bg-background mx-auto container text-xl">
+    <div class="navbar bg-background mx-auto container text-xl py-4">
       <div class="flex-1 text-2xl font-black">
         <router-link :to="{ name: 'home-view' }" class="flex gap-x-1"
           ><LogoIcon />Wallet Validator</router-link

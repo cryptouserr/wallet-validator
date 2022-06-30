@@ -2,14 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-.btn {
+.btn-primary-custom {
   @apply border-2 border-white text-darkBlue rounded-full;
 }
 
-.btn-primary {
-  @apply bg-white;
+.btn-primary-custom:hover {
+  @apply border-white bg-darkBlue text-white;
 }
 
-.btn-primary:hover {
-  @apply border-white bg-darkBlue text-white;
+.btn-primary-custom {
+  @apply bg-white;
 }
