@@ -10,6 +10,7 @@
     "format:prettier": "prettier --write"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.6.2",
     "daisyui": "^2.17.0",
     "vue": "^3.2.25",
     "vue-router": "^4.0.16"

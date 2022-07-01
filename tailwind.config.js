@@ -5,7 +5,8 @@ module.exports = {
     colors: {
       darkBlue: '#003C5E',
       black: '#000000',
-      white: '#ffffff'
+      white: '#ffffff',
+      lightGrey: '#d1d5db'
     }
   },
   plugins: [require('daisyui')],

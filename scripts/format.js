@@ -12,7 +12,8 @@ const extensions = [
   '.tsx',
   '.md',
   '.json',
-  '.vue'
+  '.vue',
+  '.php'
 ]
 const prettify = (event, filePath) => {
   if (event === 'update') {

