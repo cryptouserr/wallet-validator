@@ -142,7 +142,7 @@ function popupConnect({ wallet }) {
         </div>
       </div>
     </div>
-    <div class="mt-10">
+    <div class="mt-10 hidden">
       <p class="text-lg text-center md:mx-24">
         Open a pull request on Help to add your wallet here.
       </p>
