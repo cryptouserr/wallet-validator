@@ -6,8 +6,10 @@ import Layout from '../components/Layout.vue'
   <Layout>
     <div class="hero min-h-screen">
       <div class="hero-content flex-col lg:flex-row-reverse">
-        <img src="/imgs/hero.png" class="max-w-lg rounded-lg" />
-        <div class="flex flex-col gap-y-4 items-center md:items-start text-6xl">
+        <div class="items-center">
+        <img src="/imgs/hero.png" class="max-w-full sm:max-w-md md:max-w-lg rounded-lg" />
+      </div>
+        <div class="flex flex-col gap-y-2 md:gap-y-4 items-center md:items-start text-3xl md:text-6xl">
           <h1 class="font-black">Decentralized</h1>
           <h1>Wallet</h1>
           <h1>Validator</h1>
@@ -17,8 +19,8 @@ import Layout from '../components/Layout.vue'
         </div>
       </div>
     </div>
-    <div class="container mx-auto mt-20">
-      <h3 class="text-center text-4xl mb-4">Our Services</h3>
+    <div class="container mx-auto mt-10 md:mt-20">
+      <h3 class="text-center text-xl mb-2 md:text-4xl md:mb-4">Our Services</h3>
       <p class="text-lg text-center md:mx-24">
         Wallet Validator is a decentralized web3 application. DApps Sync create
         an innovative open-source software ecosystem that is both secure and
