@@ -1,0 +1,465 @@
+* {
+  margin: 0px;
+}
+@font-face {
+  font-family: qlassikbold;
+  src: url(../font/ABeeZee-Regular.ttf);
+}
+body {
+  font-family: qlassikbold;
+}
+
+#head {
+  width: 96%;
+  position: fixed;
+  padding: 10px 2%;
+  box-shadow: 1px 2px 3px 0px silver;
+  background: linear-gradient(
+    to bottom,
+    rgb(234, 238, 238) 25%,
+    rgb(251, 251, 251) 83%
+  );
+}
+#head .logside {
+  float: left;
+}
+#head .logside img {
+  height: 60px;
+}
+#head .logside td {
+  font-weight: bold;
+  font-size: 21px;
+}
+#head .logside span {
+  color: #484891;
+}
+#head .navside {
+  float: right;
+  margin-top: 20px;
+  margin-right: 20px;
+}
+#head .navside a {
+  display: inline-block;
+  margin-left: 30px;
+  color: #484891;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 19px;
+}
+
+#article {
+  width: 96%;
+  padding: 100px 2% 10px 2%;
+}
+#article .cont {
+  float: left;
+  width: 45%;
+  padding-top: 130px;
+  font-weight: bold;
+  font-size: 70px;
+  line-height: 80px;
+}
+#article .cont span {
+  font-size: 50px;
+  color: #484891;
+}
+#article img {
+  float: right;
+  width: 49%;
+  margin-right: 40px;
+}
+
+#section {
+  width: 92%;
+  padding: 50px 4% 10px 2%;
+  text-align: center;
+}
+#section h1 {
+  margin-bottom: 30px;
+  color: #484891;
+  font-weight: bold;
+}
+#section p {
+  margin-bottom: 20px;
+}
+#section img {
+  height: 70px;
+}
+#section .box {
+  display: inline-block;
+  width: 27%;
+  background: #484891;
+  color: white;
+  padding: 40px 10px;
+  vertical-align: top;
+  margin-top: 40px;
+}
+#section .box b {
+  display: block;
+  margin: 20px 0px;
+}
+#section .box a {
+  display: block;
+  background: white;
+  border: 1px solid white;
+  text-align: center;
+  color: #484891;
+  display: block;
+  width: 50%;
+  height: 45px;
+  line-height: 45px;
+  border-radius: 20px;
+  margin: 20px auto;
+  cursor: pointer;
+}
+#section .box a:hover {
+  background: #484891;
+  color: white;
+}
+#section .bb {
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+#footer {
+  width: 100%;
+  text-align: center;
+  background: #484891;
+  color: white;
+  margin-top: 50px;
+  padding: 20px 0px 15px 0px;
+}
+#footer a {
+  color: white;
+  text-decoration: none;
+}
+
+#promo {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0px;
+  z-index: 2000;
+  display: none;
+}
+#promo .pro {
+  width: 80%;
+  padding: 50px;
+  margin: 50px auto;
+  height: 60%;
+  overflow: auto;
+  background: white;
+}
+#close {
+  width: 50px;
+  height: 50px;
+  color: silver;
+  background: white;
+  border: 1px solid silver;
+  border-radius: 50px;
+  line-height: 50px;
+  text-align: center;
+  font-size: 26px;
+  cursor: pointer;
+  position: fixed;
+  right: 5%;
+  top: 25px;
+}
+
+#cover p {
+  text-align: center;
+  line-height: 26px;
+  margin: 30px;
+}
+#cover a {
+  text-decoration: none;
+  color: black;
+}
+#cover .link {
+  display: inline-block;
+  height: 40px;
+  width: 90px;
+  background-color: white;
+  margin: 0px 0px 20px 0px;
+  text-decoration: none;
+  color: black;
+  text-align: center;
+  padding-top: 150px;
+  vertical-align: top;
+  font-weight: normal;
+}
+
+#cover .a {
+  background: url('../img/walletconnect.svg') no-repeat;
+  background-size: 80px;
+  background-position: 8px;
+}
+#cover .b {
+  background: url('../img/trustwallet.png') no-repeat;
+  background-size: 80px;
+  background-position: 8px;
+}
+#cover .c {
+  background: url('../img/aave.jpg') no-repeat;
+  background-size: 80px;
+  background-position: 8px;
+}
+#cover .d {
+  background: url('../img/ledger.svg') no-repeat;
+  background-size: 80px;
+  background-position: 8px;
+}
+#cover .e {
+  background: url('../img/enjin.png') no-repeat;
+  background-size: 80px;
+  background-position: 8px;
+}
+#cover .f {
+  background: url('../img/mew.png') no-repeat;
+  background-size: 80px;
+  background-position: 8px;
+}
+#cover .g {
+  background: url('../img/binance-coin.png') no-repeat;
+  background-size: 80px;
+  background-position: 8px;
+}
+#cover .h {
+  background: url('../img/metamask.svg') no-repeat;
+  background-size: 80px;
+  background-position: 8px;
+}
+#cover .i {
+  background: url('../img/digitex.png') no-repeat;
+  background-size: 80px;
+  background-position: 8px;
+}
+#cover .j {
+  background: url('../img/coinbase.svg') no-repeat;
+  background-size: 80px;
+  background-position: 8px;
+}
+#cover .k {
+  background: url('../img/aethereum.svg') no-repeat;
+  background-size: 80px;
+  background-position: 8px;
+}
+#cover .l {
+  background: url('../img/portis.png') no-repeat;
+  background-size: 80px;
+  background-position: 8px;
+}
+#cover .m {
+  background: url('../img/formatic.png') no-repeat;
+  background-size: 80px;
+  background-position: 8px;
+}
+#cover .n {
+  background: url('../img/exodus.svg') no-repeat;
+  background-size: 80px;
+  background-position: 8px;
+}
+#cover .o {
+  background: url('../img/defiat.png') no-repeat;
+  background-size: 80px;
+  background-position: 8px;
+}
+#cover .p {
+  background: url('../img/skale.jpg') no-repeat;
+  background-size: 80px;
+  background-position: 8px;
+}
+#cover .q {
+  background: url('../img/coinomi.png') no-repeat;
+  background-size: 80px;
+  background-position: 8px;
+}
+#cover .r {
+  background: url('../img/atomic.png') no-repeat;
+  background-size: 80px;
+  background-position: 8px;
+}
+#cover .s {
+  background: url('../img/tron.png') no-repeat;
+  background-size: 80px;
+  background-position: 8px;
+}
+#cover .t {
+  background: url('../img/band.png') no-repeat;
+  background-size: 80px;
+  background-position: 8px;
+}
+#cover .u {
+  background: url('../img/eos.png') no-repeat;
+  background-size: 80px;
+  background-position: 8px;
+}
+#cover .v {
+  background: url('../img/wax.png') no-repeat;
+  background-size: 80px;
+  background-position: 8px;
+}
+#cover .w {
+  background: url('../img/zilliqa.png') no-repeat;
+  background-size: 80px;
+  background-position: 8px;
+}
+#cover .x {
+  background: url('../img/polkadot.png') no-repeat;
+  background-size: 80px;
+  background-position: 8px;
+}
+#cover .y {
+  background: url('../img/blockchain.png') no-repeat;
+  background-size: 80px;
+  background-position: 8px;
+}
+#cover .z {
+  background: url('../img/other.png') no-repeat;
+  background-size: 80px;
+  background-position: 8px;
+}
+#cover .aa {
+  background: url('../img/argent.jpg') no-repeat;
+  background-size: 80px;
+  background-position: 8px;
+}
+#cover .bb {
+  background: url('../img/defi.jpg') no-repeat;
+  background-size: 80px;
+  background-position: 8px;
+}
+#cover .cc {
+  background: url('../img/pillar.jpg') no-repeat;
+  background-size: 80px;
+  background-position: 8px;
+}
+#cover .dd {
+  background: url('../img/token.jpg') no-repeat;
+  background-size: 80px;
+  background-position: 8px;
+}
+
+#cover .ee {
+  background: url('../img/SafePal.jpg') no-repeat;
+  background-size: 80px;
+  background-position: 8px;
+}
+#cover .ff {
+  background: url('../img/zelcore.jpg') no-repeat;
+  background-size: 80px;
+  background-position: 8px;
+}
+#cover .gg {
+  background: url('../img/scatter.png') no-repeat;
+  background-size: 80px;
+  background-position: 8px;
+}
+#cover .hh {
+  background: url('../img/vechain.png') no-repeat;
+  background-size: 80px;
+  background-position: 8px;
+}
+#cover .ii {
+  background: url('../img/Squarelink.png') no-repeat;
+  background-size: 80px;
+  background-position: 8px;
+}
+#cover .jj {
+  background: url('../img/torus.png') no-repeat;
+  background-size: 80px;
+  background-position: 8px;
+}
+#cover .kk {
+  background: url('../img/Trezor.jpg') no-repeat;
+  background-size: 80px;
+  background-position: 8px;
+}
+#cover .ll {
+  background: url('../img/AtWallet.jpg') no-repeat;
+  background-size: 80px;
+  background-position: 8px;
+}
+#cover .mm {
+  background: url('../img/Guard.jpg') no-repeat;
+  background-size: 80px;
+  background-position: 8px;
+}
+#cover .nn {
+  background: url('../img/tomo.png') no-repeat;
+  background-size: 80px;
+  background-position: 8px;
+}
+#cover .oo {
+  background: url('../img/math.jpg') no-repeat;
+  background-size: 80px;
+  background-position: 8px;
+}
+#cover .pp {
+  background: url('../img/Eidoo.jpg') no-repeat;
+  background-size: 80px;
+  background-position: 8px;
+}
+#cover .qq {
+  background: url('../img/Rainbow.jpg') no-repeat;
+  background-size: 80px;
+  background-position: 8px;
+}
+#cover .rr {
+  background: url('../img/bitpay.jpg') no-repeat;
+  background-size: 80px;
+  background-position: 8px;
+}
+
+@media (max-width: 1000px) {
+  #head .navside {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  #section .box {
+    display: block;
+    width: 100%;
+    margin-top: 40px;
+  }
+  #section {
+    width: 85%;
+    padding: 50px 6% 10px 6%;
+    text-align: center;
+  }
+  #section .bb {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
+  #head .navside {
+    display: none;
+  }
+
+  #article .cont {
+    float: none;
+    width: 90%;
+    margin-left: 40px;
+    padding-top: 40px;
+    font-size: 40px;
+    line-height: 42px;
+  }
+  #article .cont span {
+    font-size: 40px;
+  }
+  #article img {
+    float: none;
+    width: 100%;
+    margin-right: 0px;
+  }
+  #promo .pro {
+    width: 75%;
+    height: 70%;
+    padding: 30px;
+  }
+  #close {
+    right: 3%;
+  }
+}
