@@ -7,7 +7,7 @@ import Layout from '../components/Layout.vue'
     <div class="hero min-h-screen">
       <div class="hero-content flex-col lg:flex-row-reverse">
         <div class="items-center">
-        <img src="/imgs/hero.png" class="max-w-full sm:max-w-md md:max-w-lg rounded-lg" />
+        <img src="/imgs/hero.png" class="max-w-full w-[300] object-center object-cover sm:max-w-md md:max-w-lg rounded-lg" />
       </div>
         <div class="flex flex-col gap-y-2 md:gap-y-4 items-center md:items-start text-3xl md:text-6xl">
           <h1 class="font-black">Decentralized</h1>
