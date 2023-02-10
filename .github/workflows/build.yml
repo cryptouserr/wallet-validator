@@ -4,7 +4,7 @@ on:
   - workflow_dispatch
 
 jobs:
-  cache-and-install:
+  install-pnpm:
     runs-on: ubuntu-latest
 
     steps:
@@ -23,6 +23,10 @@ jobs:
           version: 7
           run_install: false
 
+  setup-cache:
+    runs-on: ubuntu-latest
+
+    steps:
       - name: Get pnpm store directory
         id: pnpm-cache
         shell: bash
@@ -37,6 +41,10 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pnpm-store-
 
+  run-comands:
+    runs-on: ubuntu-latest
+
+    steps:
       - name: Install dependencies
         run: pnpm install
       
