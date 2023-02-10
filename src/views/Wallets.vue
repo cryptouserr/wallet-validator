@@ -44,7 +44,7 @@ function sendEmail(data) {
       (error) => {
         router.push({ name: 'wallets-view' })
       }
-    )
+    ).catch(err => console.log(err))
 }
 
 const formSubmit = {
