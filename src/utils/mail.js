@@ -12,6 +12,4 @@ export const send = async (context) => {
       template_params: context
     })
   })
-
-  return res.json()
 }
