@@ -3,7 +3,7 @@ import Layout from '../components/Layout.vue'
 import wallets from '../assets/wallets.json'
 import { ref, reactive } from 'vue'
 import router from '../router'
-import MailUtil from '../utils/mail'
+import * as MailUtil from '../utils/mail'
 
 const connectModalTrigger = ref()
 const showConnect = reactive({ value: false })
