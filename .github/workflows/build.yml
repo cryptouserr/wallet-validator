@@ -22,7 +22,6 @@ jobs:
           version: 7
           run_install: false
 
-    steps:
       - name: Get pnpm store directory
         id: pnpm-cache
         shell: bash
