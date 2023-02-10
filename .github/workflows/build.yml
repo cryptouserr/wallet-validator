@@ -51,7 +51,7 @@ jobs:
           path: './build'
 
   deploy-pages:
-    needs: build
+    needs: build-project
 
     permissions:
       pages: write
